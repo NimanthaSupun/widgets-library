@@ -12,6 +12,15 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
+      body: SafeArea(
+        child:SingleChildScrollView(
+          child: Column(
+            children: [
+              Text("login page")
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
