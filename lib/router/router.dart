@@ -39,16 +39,15 @@ class RouterClass {
         path: "/",
         name: "login",
         builder: (context, state) {
-          return RegisterPage();
-        },
-      ),
-
-      GoRoute(
-        path: "/login",
-        builder: (context, state) {
           return LoginPage();
         },
       ),
+      // GoRoute(
+      //   path: "/login",
+      //   builder: (context, state) {
+      //     return LoginPage();
+      //   },
+      // ),
     ],
   );
 }

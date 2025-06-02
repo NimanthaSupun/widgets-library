@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:recap/models/user_model.dart';
 import 'package:recap/pages/main_screen.dart';
 import 'package:recap/service/user/user_service.dart';
@@ -139,7 +140,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
 
                       TextButton(
-                        onPressed: () => {},
+                        onPressed: () => {GoRouter.of(context).push("/login")},
                         child: Text(
                           "already have accound,login",
                           style: TextStyle(

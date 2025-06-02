@@ -24,17 +24,20 @@ class AuthService {
     }
   }
 
-  Future<void> signInWithEmailAndPassword({
-    required String email,
-    required String password,
-  }) async {
+  Future<void> signInWithEmailAndPassword(
+      {required String email, required String password}) async {
     try {
-      await _auth.signInWithEmailAndPassword(email: email, password: password);
-      print("User sign in Sucessfully");
+      await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      print("user sign in successfuly");
     } on FirebaseAuthException catch (e) {
-      print('Error Sign in: ${mapFirebaseAuthExceptionCode(e.code)}');
-    } catch (err) {
-      print('Error SignIn: ${err}');
+      print('Error signing in: ${mapFirebaseAuthExceptionCode(e.code)}');
+
+      throw Exception(mapFirebaseAuthExceptionCode(e.code));
+    } catch (e) {
+      print('Error signing in: $e');
     }
   }
 }
