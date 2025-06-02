@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:recap/pages/auth/login_page.dart';
 import 'package:recap/pages/auth/register_page.dart';
 
 class RouterClass {
@@ -39,6 +40,13 @@ class RouterClass {
         name: "login",
         builder: (context, state) {
           return RegisterPage();
+        },
+      ),
+
+      GoRoute(
+        path: "/login",
+        builder: (context, state) {
+          return LoginPage();
         },
       ),
     ],

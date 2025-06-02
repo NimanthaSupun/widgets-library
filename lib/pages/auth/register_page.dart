@@ -137,6 +137,18 @@ class _RegisterPageState extends State<RegisterPage> {
                             title: "Register",
                             onpresed: () => _createUser(context),
                           ),
+
+                      TextButton(
+                        onPressed: () => {},
+                        child: Text(
+                          "already have accound,login",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 10,
+                            color: Colors.blueAccent,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
