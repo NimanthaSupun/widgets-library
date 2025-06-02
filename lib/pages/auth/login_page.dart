@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -10,8 +11,7 @@ class LoginPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
+            child: Column(children: [
                 
               ],
             ),
