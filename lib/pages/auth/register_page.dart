@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:recap/models/user_model.dart';
+import 'package:recap/service/user/user_service.dart';
 import 'package:recap/widget/custom_button.dart';
 import 'package:recap/widget/custom_input.dart';
 
@@ -17,6 +19,33 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _paswordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
       TextEditingController();
+
+  bool _isLoading = false;
+
+  Future<void> _createUser(BuildContext context) async {
+    try {
+      if (!_formKey.currentState!.validate()) {
+        return;
+      }
+
+      setState(() {
+        _isLoading = true;
+      });
+
+      final UserModel newUder = UserModel(
+        userId: "",
+        name: _nameController.text,
+        email: _emailController.text,
+        password: _paswordController.text,
+      );
+
+      await UserService().saveUser(newUder);
+    } catch (err) {
+      print("Error: ${err}");
+    } finally {
+      _isLoading = false;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,11 +126,13 @@ class _RegisterPageState extends State<RegisterPage> {
                         },
                       ),
                       const SizedBox(height: 15),
-                      CustomButton(
-                        width: double.infinity,
-                        title: "Register",
-                        onpresed: () => {},
-                      ),
+                      _isLoading
+                          ? Center(child: CircularProgressIndicator())
+                          : CustomButton(
+                            width: double.infinity,
+                            title: "Register",
+                            onpresed: () => _createUser(context),
+                          ),
                     ],
                   ),
                 ),
