@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:recap/pages/auth/login_page.dart';
+import 'package:recap/pages/auth/register_page.dart';
 import 'package:recap/pages/responsive/mobile_layout.dart';
 import 'package:recap/pages/responsive/responsive_layout.dart';
 import 'package:recap/pages/responsive/web_layout.dart';
@@ -41,7 +42,7 @@ class RouterClass {
         path: "/",
         name: "login",
         builder: (context, state) {
-          return LoginPage();
+          return RegisterPage();
         },
       ),
     ],

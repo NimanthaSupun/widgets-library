@@ -7,6 +7,7 @@ class CustomInput extends StatelessWidget {
   final String labelTest;
   final String hintTest;
   final IconData icon;
+  final TextEditingController? controller;
   const CustomInput({
     super.key,
     this.validator,
@@ -14,12 +15,13 @@ class CustomInput extends StatelessWidget {
     this.keyboardType,
     required this.labelTest,
     required this.hintTest,
-    required this.icon,
+    required this.icon, this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       validator: validator,
       obscureText: obscureTest,
       keyboardType: keyboardType,
