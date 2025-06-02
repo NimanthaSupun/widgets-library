@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recap/models/user_model.dart';
+import 'package:recap/pages/main_screen.dart';
 import 'package:recap/service/user/user_service.dart';
 import 'package:recap/widget/custom_button.dart';
 import 'package:recap/widget/custom_input.dart';
@@ -40,6 +41,9 @@ class _RegisterPageState extends State<RegisterPage> {
       );
 
       await UserService().saveUser(newUder);
+      Navigator.of(
+        context,
+      ).push(MaterialPageRoute(builder: (context) => MainScreen()));
     } catch (err) {
       print("Error: ${err}");
     } finally {
