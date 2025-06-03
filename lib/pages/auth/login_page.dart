@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:recap/pages/main_screen.dart';
 import 'package:recap/service/auth/auth_service.dart';
 import 'package:recap/widget/custom_button.dart';
@@ -43,6 +42,7 @@ class _LoginPageState extends State<LoginPage> {
     } catch (err) {
       // If sign-in fails, show error dialog
       showDialog(
+        // ignore: use_build_context_synchronously
         context: context,
         builder:
             (context) => AlertDialog(
