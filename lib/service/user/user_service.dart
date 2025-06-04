@@ -16,8 +16,6 @@ class UserService {
       final userId = userCredential.user?.uid;
 
       if (userId != null) {
-
-
         final userRef = userCollection.doc(userId);
         final userMap = user.toJson();
         userMap['userId'] = userId;
