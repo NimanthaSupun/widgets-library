@@ -14,7 +14,6 @@ class AuthService {
         email: email,
         password: password,
       );
-
       return userCredential;
     } on FirebaseAuthException catch (e) {
       throw Exception(mapFirebaseAuthExceptionCode(e.code));
